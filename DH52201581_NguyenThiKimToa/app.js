@@ -1,10 +1,23 @@
 var createError = require('http-errors');
 var express = require('express');
+const { engine } = require('express-handlebars');
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+app.engine(
+    'hbs',
+    engine({
+        extname: '.hbs',
+        defaultLayout: 'false',
+        partialsDir: path.join(__dirname, 'views', 'partials'),
+        layoutsDir: path.join(__dirname, 'views', 'layouts')
+    })
+);
+
 var indexRouter = require('./routes/index');
+var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 var blogRouter = require('./routes/blog');
 var contactRouter = require('./routes/contact');
@@ -15,7 +28,7 @@ var blogdetailsRouter = require('./routes/blogdetails');
 var shopgridRouter = require('./routes/shopgrid');
 
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +40,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/admin', adminRouter);
 app.use('/', indexRouter);
 app.use('/blog', blogRouter);
 app.use('/contact', contactRouter);

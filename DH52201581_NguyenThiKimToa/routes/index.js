@@ -35,5 +35,8 @@ router.get('/blogdetails', function (req, res) {
 router.get('/shopgrid', function (req, res) {
     res.render('home/shopgrid', { title: 'Sản phẩm' });
 });
+router.get('/customer', function (req, res) {
+    res.render('home/customer', { title: 'Sản phẩm' });
+});
 
 module.exports = router;

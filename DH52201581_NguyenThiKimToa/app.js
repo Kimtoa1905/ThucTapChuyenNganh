@@ -26,6 +26,7 @@ var shopingcartRouter = require('./routes/shopingcart');
 var checkoutRouter = require('./routes/checkout');
 var blogdetailsRouter = require('./routes/blogdetails');
 var shopgridRouter = require('./routes/shopgrid');
+var customerRouter = require('./routes/customer');
 
 
 
@@ -49,6 +50,7 @@ app.use('/shopingcart', shopingcartRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/blogdetails', blogdetailsRouter);
 app.use('/shopgrid', shopgridRouter);
+app.use('/customer', customerRouter);
 app.use('/users', usersRouter);
 
 

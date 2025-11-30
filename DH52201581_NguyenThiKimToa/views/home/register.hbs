@@ -1,0 +1,26 @@
+
+<div class="container" style="max-width: 450px; margin-top: 50px;">
+    <div class="card shadow" style="padding: 30px;">
+        <h2 class="text-center mb-4">Đăng ký tài khoản</h2>
+
+        <form action="/register" method="POST">
+
+            <div class="form-group mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Nhập email" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Mật khẩu</label>
+                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-2">Đăng ký</button>
+
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="/login">Đã có tài khoản? Đăng nhập</a>
+        </div>
+    </div>
+</div>

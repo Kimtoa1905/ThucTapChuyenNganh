@@ -1,15 +1,12 @@
 var express = require('express');
 var router = express.Router();
-router.all('/*', function (req, res, next) {
-    res.app.locals.layout = 'home/shopingcart';
-    next();
+
+/* GET Shopping Cart Page */
+router.get('/', function(req, res) {
+    res.render('home/shopingcart', {
+        layout: 'home',
+        title: 'Shopping Cart'
+    });
 });
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('shopingcart', { layout: false, title: 'Shoping Cart' });
-
-});
-
 
 module.exports = router;

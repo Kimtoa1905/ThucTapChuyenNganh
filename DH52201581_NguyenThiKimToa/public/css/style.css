@@ -3466,3 +3466,20 @@ ol {
 		font-size: 24px;
 	}
 }
+/* Giữ nguyên cấu trúc Ogani nhưng tăng khoảng cách nhẹ */
+.header__menu ul li {
+    margin-right: 28px; /* tăng/giảm tuỳ ý */
+}
+
+/* Đảm bảo menu không bị xuống dòng */
+.header__menu ul {
+    white-space: nowrap;
+}
+
+/* Cân lại flex trong bootstrap grid */
+.header__menu {
+    display: flex;
+    justify-content: center;
+}
+
+

@@ -1,100 +1,56 @@
-<!-- Category Management Card -->
-<div class="card shadow mb-4">
-    <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="m-0 text-primary">
-            <i class="fa-solid fa-layer-group me-2"></i> Category Management
-        </h4>
-        <a href="#" class="btn btn-sm btn-success">
-            <i class="fa-solid fa-plus me-1"></i> Add Category
-        </a>
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/admin">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Category page</li>
+    </ol>
+    <div class="card-header">
+        <h2>Category Pages</h2>
     </div>
-
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover align-middle text-center">
-                <thead class="table-primary">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Category Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Created Date</th>
-                    <th scope="col">View</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Chăm sóc da mặt</td>
-                    <td>tẩy trang,sửa rửa măt .....</td>
-                    <td>01/11/2025</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-info">
-                            <i class="fa-solid fa-eye"></i> View
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-warning text-dark">
-                            <i class="fa-solid fa-pen-to-square"></i> Edit
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-danger">
-                            <i class="fa-solid fa-trash"></i> Delete
-                        </a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Chăm sóc tóc</td>
-                    <td>dầu gội,tinh dầu bưởi,...</td>
-                    <td>03/11/2025</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-info">
-                            <i class="fa-solid fa-eye"></i> View
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-warning text-dark">
-                            <i class="fa-solid fa-pen-to-square"></i> Edit
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-danger">
-                            <i class="fa-solid fa-trash"></i> Delete
-                        </a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Chăm sóc cơ thể</td>
-                    <td>dưỡng thể, tẩy tế bào cơ thể </td>
-                    <td>06/11/2025</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-info">
-                            <i class="fa-solid fa-eye"></i> View
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-warning text-dark">
-                            <i class="fa-solid fa-pen-to-square"></i> Edit
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-danger">
-                            <i class="fa-solid fa-trash"></i> Delete
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="card body">
+        <div class="col-md-6">
+            <a href="@" class="btn btn-primary">Thêm mới</a>
         </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td><i class="fa-solid fa-pen-to-square text-warning"></i></td>
+                <td><i class="fa-solid fa-trash text-danger"></i></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td><i class="fa-solid fa-pen-to-square text-warning"></i></td>
+                <td><i class="fa-solid fa-trash text-danger"></i></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+                <td><i class="fa-solid fa-pen-to-square text-warning"></i></td>
+                <td><i class="fa-solid fa-trash text-danger"></i></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="card-footer text-end text-muted small">
-        <i class="fa-regular fa-clock me-1"></i> Updated at: 09/11/2025
-    </div>
 </div>

@@ -1,26 +1,45 @@
+<form action="/register" method="POST" novalidate>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
 
-<div class="container" style="max-width: 450px; margin-top: 50px;">
-    <div class="card shadow" style="padding: 30px;">
-        <h2 class="text-center mb-4">Đăng ký tài khoản</h2>
+            {{!-- Show flash error --}}
+            {{#if error_message}}
+                <div class="alert alert-danger text-center">{{error_message}}</div>
+            {{/if}}
 
-        <form action="/register" method="POST">
+            {{!-- Show validation errors --}}
+            {{#if errors}}
+                {{#each errors}}
+                    <div class="alert alert-danger">{{this.message}}</div>
+                {{/each}}
+            {{/if}}
 
-            <div class="form-group mb-3">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Nhập email" required>
+            <div class="checkout__input">
+                <p>First Name <span>*</span></p>
+                <input type="text" name="firstName" value="{{firstName}}" placeholder="Enter first name">
             </div>
 
-            <div class="form-group mb-3">
-                <label>Mật khẩu</label>
-                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu" required>
+            <div class="checkout__input">
+                <p>Last Name <span>*</span></p>
+                <input type="text" name="lastName" value="{{lastName}}" placeholder="Enter last name">
             </div>
 
-            <button type="submit" class="btn btn-success w-100 mt-2">Đăng ký</button>
+            <div class="checkout__input">
+                <p>Email Address <span>*</span></p>
+                <input type="email" name="email" value="{{email}}" placeholder="Enter your email">
+            </div>
 
-        </form>
+            <div class="checkout__input">
+                <p>Password <span>*</span></p>
+                <input type="password" name="password" placeholder="Password">
+            </div>
 
-        <div class="text-center mt-3">
-            <a href="/login">Đã có tài khoản? Đăng nhập</a>
+            <div class="checkout__input">
+                <p>Confirm Password <span>*</span></p>
+                <input type="password" name="confirm_password" placeholder="Confirm password">
+            </div>
+
+            <button type="submit" class="site-btn" style="width:100%;">REGISTER</button>
         </div>
     </div>
-</div>
+</form>

@@ -1,0 +1,44 @@
+
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/admin">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Category page</li>
+    </ol>
+        <div class="card-header">
+            <h1> Create category</h1>
+        </div>
+        <div class="card body border-0">
+
+            <form method="post" action="/admin/category/create" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" >
+                </div>
+                <div class="mb-3">
+                    <label>Image</label>
+                    <input type="file" name="image" id="image" class="form-control">
+
+                    <img id="preview-image"
+                         src="#"
+                         style="width:150px; margin-top:10px; display:none;">
+
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">status</label>
+                  <select  name="status" class="form-control" id="status">
+                      <option value="false" selected>Deinactive</option>
+                      <option value="true" selected>Active</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Add a category</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+

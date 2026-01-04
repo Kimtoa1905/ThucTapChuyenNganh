@@ -1,0 +1,96 @@
+<div class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/admin">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Product page</li>
+    </ol>
+
+    <div class="card-header">
+        <h1>Edit Product</h1>
+    </div>
+
+    <div class="card body border-0">
+
+        <form method="post"
+              action="/admin/product/edit/{{product._id}}?_method=PUT"
+              enctype="multipart/form-data">
+
+            <!-- NAME -->
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input name="name"
+                       value="{{product.name}}"
+                       type="text"
+                       class="form-control">
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="description"
+                          class="form-control">{{product.description}}</textarea>
+            </div>
+
+            <!-- PRICE -->
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input name="price"
+                       value="{{product.price}}"
+                       type="number"
+                       class="form-control">
+            </div>
+
+            <!-- CATEGORY -->
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+
+                <select name="category" class="form-control">
+                    {{#each categories}}
+                        <option value="{{_id}}"
+                            {{#ifEquals _id ../product.category}}
+                                selected
+                            {{/ifEquals}}>
+                            {{name}}
+                        </option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <!-- IMAGE -->
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+
+                <input type="file"
+                       name="image"
+                       id="image"
+                       class="form-control">
+
+                <img id="preview-image"
+                     src="{{product.image}}"
+                     style="width:150px; margin-top:10px;">
+            </div>
+
+            <!-- STATUS -->
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+
+                <select name="status" class="form-control">
+                    {{#if product.status}}
+                        <option value="false">Inactive</option>
+                        <option value="true" selected>Active</option>
+                    {{else}}
+                        <option value="false" selected>Inactive</option>
+                        <option value="true">Active</option>
+                    {{/if}}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Update Product
+            </button>
+
+        </form>
+
+    </div>
+</div>

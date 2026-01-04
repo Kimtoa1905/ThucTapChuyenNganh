@@ -1,0 +1,49 @@
+<section class="product-details spad">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- IMAGE -->
+            <div class="col-lg-5 col-md-6 text-center">
+                <img src="{{product.image}}"
+                     class="img-fluid rounded shadow"
+                     style="max-height:450px; object-fit:contain;">
+            </div>
+
+            <!-- CONTENT -->
+            <div class="col-lg-7 col-md-6">
+
+                <h3 class="mb-3" style="font-weight:700;">
+                    {{product.name}}
+                </h3>
+
+                <h4 class="text-success mb-3">
+                    {{product.price}} VND
+                </h4>
+
+                <div class="mb-4">
+                    <span class="fw-bold">Category:</span>
+                    <span class="badge bg-primary text-light">
+                        {{product.category.name}}
+                    </span>
+                </div>
+
+                <!-- Description -->
+                <div class="product__details__tab__desc mb-4">
+                    <h5>Mô tả sản phẩm</h5>
+                    <p style="white-space: pre-line;
+                              line-height: 1.8;
+                              font-size: 16px;
+                              color:#444;">
+                        {{product.description}}
+                    </p>
+                </div>
+
+                <button class="btn btn-success px-4 py-2">
+                    Thêm vào giỏ hàng
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</section>

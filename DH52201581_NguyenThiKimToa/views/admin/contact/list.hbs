@@ -1,0 +1,58 @@
+<h2>Danh sách liên hệ</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Tên</th>
+        <th>Email</th>
+        <th>Tin nhắn</th>
+        <th>Ngày gửi</th>
+        <th>Đã xem</th>
+        <th>Trạng thái</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {{#each contacts}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{message}}</td>
+            <td>{{createdAt}}</td>
+
+            <td>
+                {{#if isRead}}
+                    <span class="badge badge-success">Đã xem</span>
+                {{else}}
+                    <span class="badge badge-danger">Chưa xem</span>
+                {{/if}}
+
+                <form action="/admin/contact/read/{{_id}}" method="POST">
+                    <button class="btn btn-sm btn-info mt-1">Đánh dấu đã xem</button>
+                </form>
+            </td>
+
+            <td>
+                {{#if status}}
+                    <span class="badge badge-primary">Đã duyệt</span>
+                {{else}}
+                    <span class="badge badge-warning">Chờ duyệt</span>
+                {{/if}}
+
+                <form action="/admin/contact/status/{{_id}}" method="POST">
+                    <button class="btn btn-sm btn-secondary mt-1">Đổi trạng thái</button>
+                </form>
+            </td>
+
+            <td>
+                <form action="/admin/contact/delete/{{_id}}" method="POST">
+                    <button class="btn btn-danger btn-sm">Xóa</button>
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

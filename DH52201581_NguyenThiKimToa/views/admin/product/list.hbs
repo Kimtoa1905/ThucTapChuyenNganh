@@ -1,0 +1,176 @@
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/admin">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Product page</li>
+    </ol>
+
+    <div class="card-header">
+        <h2>Product Pages</h2>
+    </div>
+
+    <div class="card body">
+
+        <div class="col-md-6 mb-3">
+            <a href="/admin/product/create" class="btn btn-primary">
+                Add a Product
+            </a>
+        </div>
+        <form method="GET" action="/admin/product" class="row mb-3">
+
+            <!-- Search -->
+            <div class="col-md-4">
+                <input type="text"
+                       name="keyword"
+                       value="{{keyword}}"
+                       placeholder="Search product name..."
+                       class="form-control">
+            </div>
+
+            <!-- Category Filter -->
+            <div class="col-md-3">
+                <select name="category" class="form-control">
+                    <option value="">-- All Categories --</option>
+
+                    {{#each categories}} //dùng để lặp theo từng category
+                        <option value="{{_id}}"
+                                {{#ifEquals ../selectedCategory _id}}selected{{/ifEquals}}>// giữ lại lụa chọn khi reload trang
+                            {{name}}
+                        </option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <!-- Status -->
+            <div class="col-md-2">
+                <select name="status" class="form-control">
+                    <option value="">-- All Status --</option>
+                    <option value="true"  {{#ifEquals status "true"}}selected{{/ifEquals}}>Active</option>
+                    <option value="false" {{#ifEquals status "false"}}selected{{/ifEquals}}>Inactive</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-primary">Search</button>
+                <a href="/admin/product" class="btn btn-secondary">Reset</a>
+            </div>
+
+        </form>
+
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Category</th>
+                <th scope="col">Status</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {{#each products}}
+                <tr>
+                    <th scope="row">{{_id}}</th>
+
+                    <td>{{name}}</td>
+
+                    <td style="max-width: 250px;">
+                        {{{nl2br description}}}
+                    </td>
+
+                    <td>
+                        {{price}}
+                    </td>
+
+                    <td>
+                        <img src="{{image}}" class="img-thumbnail" width="90">
+                    </td>
+
+                    <td>
+                        {{#if category}}
+                            {{category.name}}
+                        {{else}}
+                            <span class="text-danger">No Category</span>
+                        {{/if}}
+                    </td>
+
+                    <td>
+                        {{#if status}}
+                            <i class="fa-solid fa-circle-check text-success"></i>
+                        {{else}}
+                            <i class="fa-solid fa-circle-xmark text-danger"></i>
+                        {{/if}}
+                    </td>
+
+                    <td>
+                        <a href="/admin/product/edit/{{_id}}">
+                            <i class="fa-solid fa-pen-to-square text-warning"></i>
+                        </a>
+                    </td>
+
+                    <td>
+                        <form action="/admin/product/delete/{{_id}}?_method=DELETE" method="post">
+                            <button type="submit" class="border-0 bg-transparent">
+                                <i class="fa-solid fa-trash text-danger"></i>
+                            </button>
+                        </form>
+                    </td>
+
+                </tr>
+            {{/each}}
+
+            </tbody>
+        </table>
+        {{#if totalPages}}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+
+                    {{!-- Previous --}}
+                    <li class="page-item {{#ifEquals page 1}}disabled{{/ifEquals}}">
+                        <a class="page-link"
+                           href="/admin/product?page={{subtract page 1}}
+                        {{#if keyword}}&keyword={{keyword}}{{/if}}
+                        {{#if selectedCategory}}&category={{selectedCategory}}{{/if}}
+                        {{#if status}}&status={{status}}{{/if}}">
+                        « Previous
+                        </a>
+                    </li>
+
+                    {{!-- Page Numbers --}}
+                    {{#each (range 1 totalPages)}}
+                        <li class="page-item {{#ifEquals ../page this}}active{{/ifEquals}}">
+                            <a class="page-link"
+                               href="/admin/product?page={{this}}
+                            {{#if ../keyword}}&keyword={{../keyword}}{{/if}}
+                            {{#if ../selectedCategory}}&category={{../selectedCategory}}{{/if}}
+                            {{#if ../status}}&status={{../status}}{{/if}}">
+                            {{this}}
+                            </a>
+                        </li>
+                    {{/each}}
+
+                    {{!-- Next --}}
+                    <li class="page-item {{#ifEquals page totalPages}}disabled{{/ifEquals}}">
+                        <a class="page-link"
+                           href="/admin/product?page={{add page 1}}
+                        {{#if keyword}}&keyword={{keyword}}{{/if}}
+                        {{#if selectedCategory}}&category={{selectedCategory}}{{/if}}
+                        {{#if status}}&status={{status}}{{/if}}">
+                        Next »
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        {{/if}}
+
+
+    </div>
+</div>

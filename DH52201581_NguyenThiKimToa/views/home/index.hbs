@@ -9,14 +9,9 @@
                         <span>Tất cả sản phẩm</span>
                     </div>
                     <ul>
-                        <li><a href="#">Sản phẩm mới</a></li>
-                        <li><a href="#">Chăm sóc da</a></li>
-                        <li><a href="#">Tắm & Dưỡng Thể</a></li>
-                        <li><a href="#">Chăm sóc tóc</a></li>
-                        <li><a href="#">Dưỡng môi</a></li>
-                        <li><a href="#">Vấn đề về da</a></li>
-                        <li><a href="#">Vấn đề về tóc</a></li>
-                        <li><a href="#">Combo & Bộ sản phẩm</a></li>
+                        {{#each categories}}
+                            <li><a href="/category/{{_id}}">{{name}}</a></li>
+                        {{/each}}
                     </ul>
                 </div>
             </div>
@@ -38,8 +33,8 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
+                            <h5>+84 977015736</h5>
+                            <span>Hỗ trợ 24/7 </span>
                         </div>
                     </div>
                 </div>
@@ -73,22 +68,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Sản phẩm nổi bật</h2>
+                    <h2>Danh mục sản phẩm</h2>
                 </div>
                 <div class="featured__controls">
                     <ul>
                         <li class="active" data-filter="*">Tất cả</li>
-                        <li data-filter=".oranges">Nước dưỡng tóc</li>
-                        <li data-filter=".fresh-meat">Tẩy trang</li>
-                        <li data-filter=".vegetables">Tẩy tế bào chết</li>
-                        <li data-filter=".fastfood">Mặt nạ</li>
+                        <li data-filter=".oranges">Chăm sóc cơ thể</li>
+                        <li data-filter=".fresh-meat">Chăm sóc da </li>
+                        <li data-filter=".vegetables">Chăm sóc tóc</li>
+                        <li data-filter=".fastfood">Dưỡng môi</li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="row featured__filter">
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables ">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
                         <ul class="featured__item__pic__hover">
@@ -99,11 +93,41 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Nước dưỡng tóc SaChi</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>143.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables ">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-10.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Dầu gội bưởi</a></h6>
+                        <h5>261.000 VND</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges ">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-9.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Sữa tắm khuynh diệp</a></h6>
+                        <h5>241.000 VND</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.png">
                         <ul class="featured__item__pic__hover">
@@ -114,11 +138,11 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Tinh dầu bưởi</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>162.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix  fresh-meat">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpeg">
                         <ul class="featured__item__pic__hover">
@@ -129,11 +153,11 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Dầu tẩy trang hoa hồng</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>339.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg">
                         <ul class="featured__item__pic__hover">
@@ -144,11 +168,11 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Nước cân bằng bí đao</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>290.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-5.webp">
                         <ul class="featured__item__pic__hover">
@@ -159,11 +183,11 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Tẩy tế bào Body</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>123.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-6.jpg">
                         <ul class="featured__item__pic__hover">
@@ -174,11 +198,11 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Mặt nạ nghệ Hưng Yên</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>339.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-7.jpg">
                         <ul class="featured__item__pic__hover">
@@ -189,11 +213,41 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Sữa tắm đường thốt nốt</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>212.000 VND</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-8.webp">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Son dưỡng môi </a></h6>
+                        <h5>32.000 VND</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-12.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#"> Tẩy tế bào chết môi </a></h6>
+                        <h5>74.000 VND</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-8.png">
                         <ul class="featured__item__pic__hover">
@@ -204,7 +258,7 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="#">Sửa rửa mặt hoa sen</a></h6>
-                        <h5>$30.00</h5>
+                        <h5>399.000 VND</h5>
                     </div>
                 </div>
             </div>
@@ -232,209 +286,7 @@
 </div>
 <!-- Banner End -->
 
-<!-- Latest Product Section Begin -->
-<section class="latest-product spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="latest-product__text">
-                    <h4>Latest Products</h4>
-                    <div class="latest-product__slider owl-carousel">
-                        <div class="latest-prdouct__slider__item">
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-1.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Dầu gội bưởi</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-2.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất hoa hồng </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-3.jpeg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6> Tinh chất bí đao </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="latest-prdouct__slider__item">
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-1.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Dầu gội bưởi</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-2.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất hoa hồng</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-3.jpeg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất bí đao </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="latest-product__text">
-                    <h4>Top Rated Products</h4>
-                    <div class="latest-product__slider owl-carousel">
-                        <div class="latest-prdouct__slider__item">
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-1.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Dầu gội bưởi</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-2.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất hoa hồng</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-3.jpeg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất bí đao </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="latest-prdouct__slider__item">
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-1.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Dầu gội bưởi</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-2.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất hoa hồng</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-3.jpeg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất bí đao </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="latest-product__text">
-                    <h4>Review Products</h4>
-                    <div class="latest-product__slider owl-carousel">
-                        <div class="latest-prdouct__slider__item">
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-1.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Dầu gội bưởi</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-2.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất hoa hồng</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-3.jpeg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất bí đao </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="latest-prdouct__slider__item">
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-1.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Dầu gội bưởi</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-2.jpg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất hoa hồng</h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                            <a href="#" class="latest-product__item">
-                                <div class="latest-product__item__pic">
-                                    <img src="img/latest-product/lp-3.jpeg" alt="">
-                                </div>
-                                <div class="latest-product__item__text">
-                                    <h6>Tinh chất bí đao </h6>
-                                    <span>$30.00</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Latest Product Section End -->
+
 
 <!-- Blog Section Begin -->
 <section class="from-blog spad">
@@ -442,7 +294,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title from-blog__title">
-                    <h2>From The Blog</h2>
+                    <h2>Bài viết</h2>
                 </div>
             </div>
         </div>
@@ -450,45 +302,45 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic">
-                        <img src="img/blog/blog-1.webp" alt="">
+                        <img src="img/blog/blog-1.jpg" alt="">
                     </div>
                     <div class="blog__item__text">
                         <ul>
                             <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Dầu tẩy trang hoa hồng Cocoon – sạch sâu, dịu nhẹ</a></h5>
+                        <p>Dầu tẩy trang hoa hồng Cocoon giúp nhẹ nhàng hòa tan lớp trang điểm, bụi bẩn và dầu thừa trên da mà không gây khô căng. Chiết xuất hoa hồng mang lại cảm giác mềm mịn, ẩm mượt và thư giãn, giúp làn da sạch sâu nhưng vẫn giữ được độ ẩm tự nhiên.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic">
-                        <img src="img/blog/blog-2.jpg" alt="">
+                        <img src="img/blog/blog-6.jpg" alt="">
                     </div>
                     <div class="blog__item__text">
                         <ul>
                             <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Nước sen Hậu Giang Cocoon – làm dịu và cân bằng da</a></h5>
+                        <p>Nước sen Hậu Giang giúp làm dịu da, cân bằng độ ẩm và mang lại cảm giác mát lành, thư giãn sau mỗi lần chăm sóc da.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="blog__item">
                     <div class="blog__item__pic">
-                        <img src="img/blog/blog-3.jpg" alt="">
+                        <img src="img/blog/blog-7.jpg" alt="">
                     </div>
                     <div class="blog__item__text">
                         <ul>
                             <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                             <li><i class="fa fa-comment-o"></i> 5</li>
                         </ul>
-                        <h5><a href="#">Visit the clean farm in the US</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                        <h5><a href="#">Nước dưỡng tóc tinh dầu bưởi Cocoon – giảm gãy rụng, nuôi dưỡng tóc khỏe</a></h5>
+                        <p>Nước dưỡng tóc tinh dầu bưởi giúp nuôi dưỡng chân tóc khỏe mạnh, hỗ trợ giảm gãy rụng và mang lại mái tóc mềm mượt, chắc khỏe hơn mỗi ngày.</p>
                     </div>
                 </div>
             </div>

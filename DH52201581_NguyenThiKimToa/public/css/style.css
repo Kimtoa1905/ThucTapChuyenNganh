@@ -3481,5 +3481,63 @@ ol {
     display: flex;
     justify-content: center;
 }
+.product-image {
+    width: 350px;       /* chỉnh kích thước ảnh ở đây */
+    height: auto;
+    object-fit: contain;
+}
+.product__item {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.product__item:hover {
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+/* fix hình không bị méo */
+.product__item__pic {
+    height: 260px;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* Category text */
+.product-category {
+    font-size: 13px;
+    color: gray;
+    margin-top: 4px;
+}
+
+/* pagination căn giữa */
+.product__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product__pagination a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.product__pagination a.active {
+    background: #7fad39;
+    color: #fff !important;
+}
+.product__item__pic {
+    height: 320px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #fff;   /* cho nền trắng sạch sẽ */
+}
 
 
